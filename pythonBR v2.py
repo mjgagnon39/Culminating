@@ -1,6 +1,10 @@
 #Python: Text Based Royale
+import pygame
 from random import randint
+pygame.init()
 
+pygame.mixer.music.load('halo.ogg')
+pygame.mixer.music.play(-1)
 #item list
 '''
 bigLaser = 10
@@ -70,6 +74,7 @@ def fightMenu ():
 health = 100
 enemyHealth = 100
 dmg = 0
+
 for i in range(0, 1):
 	locMenu()
 	locChoice = input("Where we dropping boys?")
