@@ -1,8 +1,13 @@
 #Python: Text Based Royale
 from random import randint
+<<<<<<< HEAD
 def test():
         pass 
 
+=======
+def test2():
+        pass
+>>>>>>> 522ecdae6ced5f16944a5b40673c4116dce78b74
 #item list
 '''
 bigLaser = 10
