@@ -1,5 +1,7 @@
 #Python: Text Based Royale
 from random import randint
+def test():
+        pass 
 
 #item list
 '''
