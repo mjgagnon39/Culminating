@@ -1,10 +1,6 @@
 #Python: Text Based Royale
-import pygame
 from random import randint
-pygame.init()
 
-pygame.mixer.music.load('halo.ogg')
-pygame.mixer.music.play(-1)
 #item list
 '''
 bigLaser = 10
@@ -32,28 +28,31 @@ def locMenu():
 	print("2. Stangie Skyscrapers")
 	print("3. Luke's Landing")
 	print("4. Kyle's Kingdom")
+
+
 	
 
   
 
 
-def itemRNG(dmg):
+def itemRNG(damage):
 	''' a function determining what items you find'''
 	item = randint(10, 12)
 
 	if item == 10:
 		print("You found a Big Laser!")
-		#dmg = dmg + 100
+		damage = damage + 75
+  
 
 	if item == 11:
-		print("You found a Medium Laser")
-    #dmg = dmg + 50
+    damage = damage + 50 
+	  print("You found a Medium Laser")
+    
     
 	if item == 12:
 		print("You found a small laser")
-    #dmg = dmg + 25
-	
-	
+    damage = damage + 25
+  return damage
 
 def menu ():
   '''function that displays the players actions'''
@@ -63,6 +62,7 @@ def menu ():
   print ("3. Loot")
   print ("4. Move to the next area")
   
+
 def fightMenu ():
   ''' a function that displays your options while in a fight'''
   print ("Select what you would like to do")
@@ -71,10 +71,12 @@ def fightMenu ():
   print ("3. View enemy Health")
   print ("4. Run Away")
 
+backpack = []
+
+
 health = 100
 enemyHealth = 100
 dmg = 0
-
 for i in range(0, 1):
 	locMenu()
 	locChoice = input("Where we dropping boys?")
@@ -83,6 +85,7 @@ for i in range(0, 1):
 	if locChoice == "1":
 		enemyCount = randint(1, 3)
 		itemRNG(dmg)
+    #print (dmg)
 		print("There are", enemyCount, "enemies around")
 
 	elif locChoice == "2":
@@ -100,13 +103,28 @@ for i in range(0, 1):
 		itemRNG(dmg)
 		print("There are", enemyCount, "enemies around")
 
-while True:
+while True: #Fighting Menu 
   menu()
   actChoice = input("What would you like to do?")
   if actChoice == "1":
-    while True: 
+    for i in range (0,1): 
       fightMenu ()
       fightChoice = input("What would you like to do?")
       if fightChoice == "1":
         enemyHealth = enemyHealth - dmg 
-      
+
+      elif fightChoice == "2":
+        print ("Your Health is",health)
+
+      elif fightChoice == "3":
+        print("Your enemies health is",enemyHealth)
+
+      elif fightChoice == "4":
+        success = randint (1,2)
+        if success == 2:
+          break
+
+        elif success == 1:
+          print ("Enemy evaded!")
+  
+  
