@@ -107,6 +107,7 @@ for i in range(0, 1):
                 print("There are", enemyCount, "enemies around")
 
 while True: #Fighting Menu 
+<<<<<<< HEAD
   menu()
   actChoice = input("What would you like to do?")
   if actChoice == "1":
@@ -129,5 +130,29 @@ while True: #Fighting Menu
 
         elif success == 1:
           print ("Enemy evaded!")
+=======
+        menu()
+        actChoice = input("What would you like to do?")
+        if actChoice == "1":
+                for i in range (0,1): 
+                        fightMenu()
+                        fightChoice = input("What would you like to do?")
+                if fightChoice == "1":
+                        enemyHealth = enemyHealth - dmg 
+
+                elif fightChoice == "2":
+                        print ("Your Health is",health)
+
+                elif fightChoice == "3":
+                        print("Your enemies health is",enemyHealth)
+
+                elif fightChoice == "4":
+                        success = randint (1,2)
+                        if success == 2:
+                                break
+        
+                        elif success == 1:
+                                print ("Enemy evaded!")
+>>>>>>> 06cec4899dc098c51f8469060f9f48175b850ebd
   
   
