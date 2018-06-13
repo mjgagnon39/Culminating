@@ -114,7 +114,7 @@ while True: #Fighting Menu
       fightMenu ()
       fightChoice = input("What would you like to do?")
       if fightChoice == "1":
-        enemyHealth = enemyHealth - dmg 
+        enemyHealth = enemyHealth - dmg
 
       elif fightChoice == "2":
         print ("Your Health is",health)
