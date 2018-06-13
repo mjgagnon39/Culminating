@@ -35,24 +35,24 @@ def locMenu():
   
 
 
-def itemRNG(damage):
-	''' a function determining what items you find'''
-	item = randint(10, 12)
+def itemRNG():
+        ''' a function determining what items you find'''
+        item = randint(10, 12)
+        global dmg
+        if item == 10:
+                print("You found a Big Laser!")
+                dmg = dmg + 75
 
-	if item == 10:
-		print("You found a Big Laser!")
-		damage = damage + 75
-  
 
-	if item == 11:
-    damage = damage + 50 
-	  print("You found a Medium Laser")
-    
-    
-	if item == 12:
-		print("You found a small laser")
-    damage = damage + 25
-  return damage
+        if item == 11:
+                dmg = dmg + 50 
+                print("You found a Medium Laser")
+
+
+        if item == 12:
+                print("You found a small laser")
+                dmg = dmg + 25
+        
 
 def menu ():
   '''function that displays the players actions'''
@@ -78,30 +78,33 @@ health = 100
 enemyHealth = 100
 dmg = 0
 for i in range(0, 1):
-	locMenu()
-	locChoice = input("Where we dropping boys?")
-	
+        locMenu()
+        locChoice = input("Where we dropping boys?")
 
-	if locChoice == "1":
-		enemyCount = randint(1, 3)
-		itemRNG(dmg)
-    #print (dmg)
-		print("There are", enemyCount, "enemies around")
 
-	elif locChoice == "2":
-		enemyCount = randint(4, 8)
-		itemRNG(dmg)
-		print("There are", enemyCount, "enemies around")
+        if locChoice == "1":
+                enemyCount = randint(1, 3)
+                itemRNG()
+                print ("Your damage is",dmg)
+                print("There are", enemyCount, "enemies around")
 
-	elif locChoice == "3":
-		enemyCount = randint(1, 4)
-		itemRNG(dmg)
-		print("There are", enemyCount, "enemies around")
+        elif locChoice == "2":
+                enemyCount = randint(4, 8)
+                itemRNG()
+                print ("Your damage is",dmg)
+                print("There are", enemyCount, "enemies around")
 
-	elif locChoice == "4":
-		enemyCount = randint(2, 8)
-		itemRNG(dmg)
-		print("There are", enemyCount, "enemies around")
+        elif locChoice == "3":
+                enemyCount = randint(1, 4)
+                itemRNG()
+                print ("Your damage is",dmg)
+                print("There are", enemyCount, "enemies around")
+
+        elif locChoice == "4":
+                enemyCount = randint(2, 8)
+                itemRNG()
+                print ("Your damage is",dmg)
+                print("There are", enemyCount, "enemies around")
 
 while True: #Fighting Menu 
   menu()
